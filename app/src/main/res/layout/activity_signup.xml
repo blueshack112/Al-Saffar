@@ -40,8 +40,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
-                android:text="@string/login_welcome_message"
+                android:text="@string/register_message"
                 android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/medium_space_margin"
+                android:text="@string/username"
+                android:textColor="@color/design_default_color_primary"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/input_username_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:autofillHints="@null"
+                android:background="@color/subtitle_background"
+                android:ems="10"
+                android:hint="@string/username_hint"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -54,7 +79,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/input_email_address"
+                android:id="@+id/input_email_address_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/screen_margin"
@@ -80,7 +105,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/input_password"
+                android:id="@+id/input_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/screen_margin"
@@ -95,149 +120,41 @@
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp" />
 
-
-            <Button
-                android:id="@+id/btn_login"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_space_margin"
-                android:layout_marginEnd="@dimen/screen_margin"
-                android:text="@string/login" />
+                android:text="@string/confirm_password"
+                android:textColor="@color/design_default_color_primary"
+                android:textSize="16sp" />
 
-            <Button
-                android:id="@+id/btn_create_new_account"
+            <EditText
+                android:id="@+id/input_confirm_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
-                android:backgroundTint="@color/white"
-                android:text="@string/new_user_create_an_account"
-                android:textAlignment="center"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="12sp"
-                app:rippleColor="@color/black" />
+                android:autofillHints="@null"
+                android:background="@color/subtitle_background"
+                android:ems="10"
+                android:hint="@string/re_enter_your_password"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/btn_signup"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_space_margin"
-                android:text="@string/password"
-                android:textColor="@color/design_default_color_primary"
-                android:textSize="16sp" />
+                android:layout_marginEnd="@dimen/screen_margin"
+                android:text="@string/signup" />
+
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
