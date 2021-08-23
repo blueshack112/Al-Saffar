@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Al-Saffar</string>
     <string name="log_in_to_al_saffar">Log In To Al-Saffar</string>
-    <string name="login_welcome_message">Welcome To Al-Saffar. Login to your account to conitnue using the services of Al-Saffar Mobile Application.</string>
+    <string name="login_welcome_message">Welcome To Al-Saffar. Login to your account to continue using the services of Al-Saffar Mobile Application.</string>
+    <string name="register_message">Welcome To Al-Saffar. Register to your account to use the services of Al-Saffar Mobile Application.</string>
     <string name="login">login</string>
     <string name="new_user_create_an_account">New User? Create an Account</string>
     <string name="password">Password</string>
     <string name="email_address">Email Address</string>
     <string name="myemail_email_com">myemail@email.com</string>
     <string name="create_new_account">Create New Account</string>
+    <string name="username">Username</string>
+    <string name="username_hint">khawer1997</string>
+    <string name="signup">Signup</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="re_enter_your_password">Re-enter your password</string>
 </resources>
