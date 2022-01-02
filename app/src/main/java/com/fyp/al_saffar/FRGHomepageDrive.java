@@ -66,6 +66,7 @@ public class FRGHomepageDrive extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         createDriveFab = view.findViewById(R.id.create_ride_fab);
         createDriveFab.setOnClickListener(this::goToCreateRide);
+
     }
 
     public void goToCreateRide(View v) {
