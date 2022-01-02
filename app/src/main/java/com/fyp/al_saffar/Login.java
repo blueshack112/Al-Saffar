@@ -92,7 +92,7 @@ public class Login extends AppCompatActivity {
                             } else {
                                 Toast.makeText(Login.this, "Logged in!",
                                         Toast.LENGTH_LONG).show();
-                                // TODO: Go to home page
+                                goToHomepage();
 
                             }
                         } catch (JSONException e) {
@@ -130,6 +130,11 @@ public class Login extends AppCompatActivity {
 
     public void goToSignUp(View v) {
         Intent intent = new Intent(this, Signup.class);
+        startActivity(intent);
+    }
+
+    public void goToHomepage() {
+        Intent intent = new Intent(this, Homepage.class);
         startActivity(intent);
     }
 }
