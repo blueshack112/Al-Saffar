@@ -1,15 +1,22 @@
 package com.fyp.al_saffar;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class FRGHomepageDrive extends Fragment {
+    public FloatingActionButton createDriveFab;
+
     /**
      * // TODO: Rename parameter arguments, choose names that match
      * // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,10 +51,25 @@ public class FRGHomepageDrive extends Fragment {
      * }
      * }
      */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_homepage_drive, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable
+            Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        createDriveFab = view.findViewById(R.id.create_ride_fab);
+        createDriveFab.setOnClickListener(this::goToCreateRide);
+    }
+
+    public void goToCreateRide(View v) {
+        Intent intent = new Intent(getActivity(), CreateRide.class);
+        startActivity(intent);
     }
 }
