@@ -3,7 +3,6 @@ package com.fyp.al_saffar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +13,8 @@ import com.fyp.al_saffar.models.UserCreationModel;
 public class Signup extends AppCompatActivity {
 
     EditText usernameET;
+    EditText firstNameET;
+    EditText lastNameET;
     EditText emailAddressET;
     EditText passwordET;
     EditText confirmPasswordET;
@@ -27,6 +28,8 @@ public class Signup extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         usernameET = findViewById(R.id.input_username_signup);
+        firstNameET = findViewById(R.id.input_first_name_signup);
+        lastNameET = findViewById(R.id.input_last_name_signup);
         emailAddressET = findViewById(R.id.input_email_address_signup);
         passwordET = findViewById(R.id.input_password_signup);
         confirmPasswordET = findViewById(R.id.input_confirm_password_signup);
@@ -40,6 +43,8 @@ public class Signup extends AppCompatActivity {
 
         // Set everything back to what it was
         usernameET.setBackgroundColor(getResources().getColor(R.color.subtitle_background));
+        firstNameET.setBackgroundColor(getResources().getColor(R.color.subtitle_background));
+        lastNameET.setBackgroundColor(getResources().getColor(R.color.subtitle_background));
         emailAddressET.setBackgroundColor(getResources().getColor(R.color.subtitle_background));
         passwordET.setBackgroundColor(getResources().getColor(R.color.subtitle_background));
         confirmPasswordET.setBackgroundColor(getResources().getColor(R.color.subtitle_background));
@@ -53,14 +58,20 @@ public class Signup extends AppCompatActivity {
                         usernameET.setBackgroundColor(getResources().getColor(R.color.subtitle));
                         break;
                     case 1:
+                        firstNameET.setBackgroundColor(getResources().getColor(R.color.subtitle));
+                        break;
+                    case 2:
+                        lastNameET.setBackgroundColor(getResources().getColor(R.color.subtitle));
+                        break;
+                    case 3:
                         emailAddressET
                                 .setBackgroundColor(getResources().getColor(R.color.subtitle));
                         break;
-                    case 2:
+                    case 4:
                         passwordET.setBackgroundColor(getResources().getColor(R.color.subtitle));
                         break;
 
-                    case 3:
+                    case 5:
                         confirmPasswordET
                                 .setBackgroundColor(getResources().getColor(R.color.subtitle));
                         break;
@@ -78,12 +89,14 @@ public class Signup extends AppCompatActivity {
                     .show();
             return;
         }
+
+        // Send api call to signup
     }
 
     public UserCreationModel extractDataFromForm() {
         return new
-                UserCreationModel(usernameET.getText().toString(),
-                emailAddressET.getText().toString(), passwordET.getText().toString(),
-                confirmPasswordET.getText().toString());
+                UserCreationModel(usernameET.getText().toString(), firstNameET.getText().toString(),
+                lastNameET.getText().toString(), emailAddressET.getText().toString(),
+                passwordET.getText().toString(), confirmPasswordET.getText().toString());
     }
 }

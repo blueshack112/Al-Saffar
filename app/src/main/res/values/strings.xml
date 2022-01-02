@@ -14,4 +14,8 @@
     <string name="signup">Signup</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="re_enter_your_password">Re-enter your password</string>
+    <string name="signup_first_name">First Name</string>
+    <string name="signup_last_name">Last Name</string>
+    <string name="first_name_hint">Khawer</string>
+    <string name="last_name_hint">Ali</string>
 </resources>
