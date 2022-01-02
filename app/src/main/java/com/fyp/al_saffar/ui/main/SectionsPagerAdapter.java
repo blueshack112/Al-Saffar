@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.fyp.al_saffar.FRGHomepageDrive;
+import com.fyp.al_saffar.FRGHomepageRide;
 import com.fyp.al_saffar.R;
 
 /**
@@ -16,6 +18,7 @@ import com.fyp.al_saffar.R;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+    private Fragment[] mFragments = new Fragment[]{new FRGHomepageRide(), new FRGHomepageDrive()};
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
@@ -27,9 +30,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        return mFragments[position];
     }
 
     @Nullable
@@ -40,7 +41,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
         return 2;
     }
 }
