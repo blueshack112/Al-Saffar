@@ -30,6 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.fyp.al_saffar.Values.API_ACCOUNTS;
+import static com.fyp.al_saffar.Values.TAG;
 
 public class Signup extends AppCompatActivity {
 
@@ -40,7 +41,6 @@ public class Signup extends AppCompatActivity {
     EditText passwordET;
     EditText confirmPasswordET;
     Button signUpButton;
-    final String TAG = "XXXXXXXXXXXXXXXX";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

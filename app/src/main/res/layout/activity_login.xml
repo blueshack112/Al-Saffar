@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/screen_margin"
             android:layout_marginTop="@dimen/medium_space_margin"
-            android:text="@string/email_address"
+            android:text="@string/username"
             android:textColor="@color/design_default_color_primary"
             android:textSize="16sp" />
 
@@ -58,7 +58,7 @@
             android:autofillHints="@null"
             android:background="@color/subtitle_background"
             android:ems="10"
-            android:hint="@string/myemail_email_com"
+            android:hint="@string/khawer1997"
             android:inputType="textEmailAddress"
             android:paddingStart="10dp"
             android:paddingTop="10dp"
