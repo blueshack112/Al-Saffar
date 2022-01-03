@@ -1,5 +1,6 @@
 package com.fyp.al_saffar;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,10 +61,14 @@ public class Homepage extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
             Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
-            finish();
+
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

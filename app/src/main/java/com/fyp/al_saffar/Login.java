@@ -44,7 +44,7 @@ public class Login extends AppCompatActivity {
         passwordET = findViewById(R.id.input_password);
         loginButton = findViewById(R.id.btn_login);
         createNewAccountButton = findViewById(R.id.btn_create_new_account);
-
+        passwordET.setText("");
         loginButton.setOnClickListener(this::loginButtonClicked);
         createNewAccountButton.setOnClickListener(this::goToSignUp);
 
