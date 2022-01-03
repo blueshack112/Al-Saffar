@@ -38,4 +38,12 @@
     <string name="_2018">2018</string>
     <string name="capacity">Capacity</string>
     <string name="your_car_details">Your Car Details</string>
+    <string name="view_your_car_details">View Your Car Details</string>
+    <string name="view_car_details_message">Your car has been registered in our system. View your car details below.</string>
+    <string name="brand">Brand</string>
+    <string name="approved">Approved</string>
+    <string name="condition">Condition</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="_4">4</string>
+    <string name="yes">Yes</string>
 </resources>

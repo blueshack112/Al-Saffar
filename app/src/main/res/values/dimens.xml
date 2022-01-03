@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="h1_text_size">30sp</dimen>
+    <dimen name="h2_text_size">22sp</dimen>
     <dimen name="medium_space_margin">16dp</dimen>
     <dimen name="screen_margin">32dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->

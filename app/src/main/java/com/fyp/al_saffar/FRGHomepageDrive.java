@@ -77,9 +77,9 @@ public class FRGHomepageDrive extends Fragment {
     }
 
     public void goToCarDetails(View v) {
-//         Intent intent = new Intent(getActivity(), RegisterCar.class);
-//         startActivity(intent);
-        Toast.makeText(getActivity(), "Car deets yo", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), YourCarDetails.class);
+        startActivity(intent);
+
     }
 
     public void getCarData() {

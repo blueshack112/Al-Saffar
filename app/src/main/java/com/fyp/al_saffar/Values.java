@@ -12,6 +12,10 @@ public class Values {
     // Shared Preferences Stuff
     public static String SP_FILE_KEY = "sp_user_data";
     public static String SPF_USER_ID_KEY = "spf_user_id";
+    public static String SPF_USER_USERNAME_KEY = "spf_user_username";
+    public static String SPF_USER_FIRSTNAME_KEY = "spf_user_firstname";
+    public static String SPF_USER_LASTNAME_KEY = "spf_user_lastname";
+    public static String SPF_USER_FULL_NAME_KEY = "spf_user_full_name";
 
     public static String SPF_CAR_ID_KEY = "car_user_id";
     public static String SPF_CAR_BRAND_KEY = "car_brand";

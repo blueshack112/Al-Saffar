@@ -94,14 +94,24 @@ public class Login extends AppCompatActivity {
                             } else {
                                 Toast.makeText(Login.this, "Logged in!",
                                         Toast.LENGTH_LONG).show();
-                                String user_id = jsonResponse.getJSONObject("user_data")
-                                        .getString("user_id");
+
+                                // Assign user data to app data
+                                JSONObject jsonUserData = jsonResponse.getJSONObject("user_data");
+                                String user_id = jsonUserData.getString("user_id");
+                                String username = jsonUserData.getString("username");
+                                String firstname = jsonUserData.getString("first_name");
+                                String lastname = jsonUserData.getString("last_name");
+                                String fullName = firstname + " " + lastname;
 
                                 SharedPreferences sharedPreferences =
                                         getSharedPreferences(Values.SP_FILE_KEY,
                                                 Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(Values.SPF_USER_ID_KEY, user_id);
+                                editor.putString(Values.SPF_USER_USERNAME_KEY, username);
+                                editor.putString(Values.SPF_USER_FIRSTNAME_KEY, firstname);
+                                editor.putString(Values.SPF_USER_LASTNAME_KEY, lastname);
+                                editor.putString(Values.SPF_USER_FULL_NAME_KEY, fullName);
                                 editor.apply();
 
                                 goToHomepage();
