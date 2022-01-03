@@ -1,58 +1,47 @@
 package com.fyp.al_saffar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.fyp.al_saffar.Values.API_CARS;
+import static com.fyp.al_saffar.Values.API_ORIGIN;
+import static com.fyp.al_saffar.Values.TAG;
 
 
 public class FRGHomepageDrive extends Fragment {
     public FloatingActionButton createDriveFab;
     public Button registerCarButton;
+    public boolean carFound;
 
-    /**
-     * // TODO: Rename parameter arguments, choose names that match
-     * // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-     * private static final String ARG_PARAM1 = "param1";
-     * private static final String ARG_PARAM2 = "param2";
-     * <p>
-     * // TODO: Rename and change types of parameters
-     * private String mParam1;
-     * private String mParam2;
-     * <p>
-     * public FRGHomepageDrive() {
-     * // Required empty public constructor
-     * }
-     * <p>
-     * <p>
-     * // TODO: Rename and change types and number of parameters
-     * public static FRGHomepageDrive newInstance(String param1, String param2) {
-     * FRGHomepageDrive fragment = new FRGHomepageDrive();
-     * Bundle args = new Bundle();
-     * args.putString(ARG_PARAM1, param1);
-     * args.putString(ARG_PARAM2, param2);
-     * fragment.setArguments(args);
-     * return fragment;
-     * }
-     * <p>
-     * //    @Override
-     * public void onCreate(Bundle savedInstanceState) {
-     * super.onCreate(savedInstanceState);
-     * if (getArguments() != null) {
-     * mParam1 = getArguments().getString(ARG_PARAM1);
-     * mParam2 = getArguments().getString(ARG_PARAM2);
-     * }
-     * }
-     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +58,12 @@ public class FRGHomepageDrive extends Fragment {
         createDriveFab = view.findViewById(R.id.create_ride_fab);
         registerCarButton = view.findViewById(R.id.register_car_button);
         createDriveFab.setOnClickListener(this::goToCreateRide);
-        registerCarButton.setOnClickListener(this::goToRegisterCar);
+        carFound = false;
+
+        // Get car data
+        getCarData();
+
+
     }
 
     public void goToCreateRide(View v) {
@@ -80,5 +74,81 @@ public class FRGHomepageDrive extends Fragment {
     public void goToRegisterCar(View v) {
         Intent intent = new Intent(getActivity(), RegisterCar.class);
         startActivity(intent);
+    }
+
+    public void goToCarDetails(View v) {
+//         Intent intent = new Intent(getActivity(), RegisterCar.class);
+//         startActivity(intent);
+        Toast.makeText(getActivity(), "Car deets yo", Toast.LENGTH_SHORT).show();
+    }
+
+    public void getCarData() {
+        String userId = Utils.getUserId(getActivity());
+
+        // Make the GET request on cars
+        // Send api call to car registration
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme("http")
+                .encodedAuthority(Values.API_ORIGIN_WITHOUT_HTTP + Values.API_CARS)
+                .appendQueryParameter("user_id", userId);
+        String url = builder.build().toString();
+
+        // Request a string response from the provided URL.
+        StringRequest getCarCall = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jsonResponse = null;
+                        try {
+                            jsonResponse = new JSONObject(response.toString());
+                            boolean success = jsonResponse.getBoolean("success");
+                            if (!success) {
+                                registerCarButton.setText(R.string.register_a_car);
+                                registerCarButton
+                                        .setOnClickListener(FRGHomepageDrive.this::goToRegisterCar);
+                                return;
+                            } else {
+                                JSONObject jsonCarData = jsonResponse.getJSONObject("car_data");
+                                SharedPreferences sp = getActivity()
+                                        .getSharedPreferences(Values.SP_FILE_KEY,
+                                                Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sp.edit();
+                                editor.putString(Values.SPF_CAR_ID_KEY,
+                                        jsonResponse.getString("car_id"));
+                                editor.putString(Values.SPF_CAR_BRAND_KEY,
+                                        jsonCarData.getString("brand"));
+                                editor.putString(Values.SPF_CAR_MAKE_KEY,
+                                        jsonCarData.getString("make"));
+                                editor.putString(Values.SPF_CAR_MODEL_KEY,
+                                        jsonCarData.getString("model"));
+                                editor.putString(Values.SPF_CAR_YEAR_KEY,
+                                        jsonCarData.getString("year"));
+                                editor.putString(Values.SPF_CAR_CAPACITY_KEY,
+                                        jsonCarData.getString("capacity"));
+                                editor.putString(Values.SPF_CAR_CONDITION_KEY,
+                                        jsonCarData.getString("condition"));
+                                editor.putBoolean(Values.SPF_CAR_APPROVED_KEY,
+                                        jsonCarData.getBoolean("approved"));
+                                editor.apply();
+                                registerCarButton.setText(R.string.your_car_details);
+                                registerCarButton
+                                        .setOnClickListener(FRGHomepageDrive.this::goToCarDetails);
+                                carFound = true;
+                            }
+                        } catch (JSONException e) {
+                            Log.d(TAG, "onResponse: " + e.toString());
+                            return;
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, error.toString());
+                    }
+                }
+        );
+        queue.add(getCarCall);
     }
 }
