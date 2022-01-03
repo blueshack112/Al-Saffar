@@ -18,6 +18,10 @@ public class Values {
     public static String SPF_USER_FIRSTNAME_KEY = "spf_user_firstname";
     public static String SPF_USER_LASTNAME_KEY = "spf_user_lastname";
     public static String SPF_USER_FULL_NAME_KEY = "spf_user_full_name";
+    public static String SPF_USER_EMAIL_KEY = "spf_user_email";
+    public static String SPF_USER_JOINED_SINCE_KEY = "spf_user_joined_since";
+
+
 
     public static String SPF_CAR_ID_KEY = "car_user_id";
     public static String SPF_CAR_BRAND_KEY = "car_brand";

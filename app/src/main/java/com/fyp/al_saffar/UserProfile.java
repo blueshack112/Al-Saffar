@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -33,6 +34,10 @@ public class UserProfile extends AppCompatActivity {
     private EditText currentPasswordET;
     private EditText newPasswordET;
     private EditText confirmNewPasswordET;
+    private TextView usernameT;
+    private TextView fullNameT;
+    private TextView emailAddressT;
+    private TextView joinedSinceT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +46,16 @@ public class UserProfile extends AppCompatActivity {
         changePasswordButton = findViewById(R.id.btn_change_pass);
         currentPasswordET = findViewById(R.id.input_current_password_change_pass);
         newPasswordET = findViewById(R.id.input_new_password_change_pass);
+
+        usernameT = findViewById(R.id.out_username_profile);
+        fullNameT = findViewById(R.id.out_full_name_profile);
+        emailAddressT = findViewById(R.id.out_email_profile);
+        joinedSinceT = findViewById(R.id.out_joined_since);
+
         confirmNewPasswordET = findViewById(R.id.input_confirm_password_change_pass);
         changePasswordButton.setOnClickListener(this::changePass);
+        assignData();
+
 
     }
 
@@ -106,5 +119,19 @@ public class UserProfile extends AppCompatActivity {
     public void goToHomepage() {
         Intent intent = new Intent(this, Homepage.class);
         startActivity(intent);
+    }
+
+    private void assignData() {
+        SharedPreferences sp = getSharedPreferences(Values.SP_FILE_KEY, MODE_PRIVATE);
+        String username = sp.getString(Values.SPF_USER_USERNAME_KEY, "Not Assigned");
+        String fullName = sp.getString(Values.SPF_USER_FULL_NAME_KEY, "Not Assigned");
+        String email = sp.getString(Values.SPF_USER_EMAIL_KEY, "Not Assigned");
+        String joinedSince = sp.getString(Values.SPF_USER_JOINED_SINCE_KEY, "Not Assigned");
+
+        usernameT.setText(username);
+        fullNameT.setText(fullName);
+        emailAddressT.setText(email);
+        joinedSinceT.setText(joinedSince);
+
     }
 }

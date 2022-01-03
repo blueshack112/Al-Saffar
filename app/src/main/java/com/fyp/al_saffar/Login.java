@@ -101,6 +101,8 @@ public class Login extends AppCompatActivity {
                                 String username = jsonUserData.getString("username");
                                 String firstname = jsonUserData.getString("first_name");
                                 String lastname = jsonUserData.getString("last_name");
+                                String email = jsonUserData.getString("email");
+                                String joinedSince = jsonUserData.getString("joined_since");
                                 String fullName = firstname + " " + lastname;
 
                                 SharedPreferences sharedPreferences =
@@ -112,6 +114,8 @@ public class Login extends AppCompatActivity {
                                 editor.putString(Values.SPF_USER_FIRSTNAME_KEY, firstname);
                                 editor.putString(Values.SPF_USER_LASTNAME_KEY, lastname);
                                 editor.putString(Values.SPF_USER_FULL_NAME_KEY, fullName);
+                                editor.putString(Values.SPF_USER_EMAIL_KEY, email);
+                                editor.putString(Values.SPF_USER_JOINED_SINCE_KEY, joinedSince);
                                 editor.apply();
 
                                 goToHomepage();
