@@ -102,9 +102,9 @@ public class Login extends AppCompatActivity {
                                                 Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(Values.SPF_USER_ID_KEY, user_id);
+                                editor.apply();
 
                                 goToHomepage();
-
                             }
                         } catch (JSONException e) {
                             Toast.makeText(Login.this, "Error Occured: Try again later",

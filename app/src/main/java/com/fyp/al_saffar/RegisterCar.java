@@ -104,7 +104,7 @@ public class RegisterCar extends AppCompatActivity {
         String url = Values.API_ORIGIN + Values.API_CARS;
 
         // Request a string response from the provided URL.
-        StringRequest createAccountCall = new StringRequest(Request.Method.POST, url,
+        StringRequest registerCarCall = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -151,6 +151,7 @@ public class RegisterCar extends AppCompatActivity {
                 return param;
             }
         };
+        queue.add(registerCarCall);
 
     }
 
