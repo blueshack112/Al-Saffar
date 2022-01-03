@@ -101,6 +101,7 @@ public class CreateRide extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
         mMap.getUiSettings().setMapToolbarEnabled(false);
     }
 }
