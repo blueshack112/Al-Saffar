@@ -59,7 +59,8 @@ public class Homepage extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
-            Toast.makeText(Homepage.this, "Action clicked", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+            finish();
             return true;
         }
 

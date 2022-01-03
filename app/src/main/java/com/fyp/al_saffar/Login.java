@@ -92,8 +92,8 @@ public class Login extends AppCompatActivity {
                                 Toast.makeText(Login.this, "Email or password incorrect",
                                         Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(Login.this, "Logged in!",
-                                        Toast.LENGTH_LONG).show();
+//                                Toast.makeText(Login.this, "Logged in!",
+//                                        Toast.LENGTH_SHORT).show();
 
                                 // Assign user data to app data
                                 JSONObject jsonUserData = jsonResponse.getJSONObject("user_data");
