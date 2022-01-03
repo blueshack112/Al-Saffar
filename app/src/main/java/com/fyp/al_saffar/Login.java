@@ -2,7 +2,9 @@ package com.fyp.al_saffar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -92,6 +94,15 @@ public class Login extends AppCompatActivity {
                             } else {
                                 Toast.makeText(Login.this, "Logged in!",
                                         Toast.LENGTH_LONG).show();
+                                String user_id = jsonResponse.getJSONObject("user_data")
+                                        .getString("user_id");
+
+                                SharedPreferences sharedPreferences =
+                                        getSharedPreferences(Values.SP_FILE_KEY,
+                                                Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString(Values.SPF_USER_ID_KEY, user_id);
+
                                 goToHomepage();
 
                             }
