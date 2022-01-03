@@ -26,4 +26,15 @@
     <string name="ride">Ride</string>
     <string name="drive">Drive</string>
     <string name="title_activity_create_ride">Map</string>
+    <string name="register_a_car">Register A Car</string>
+    <string name="register_your_car">Register Your Car</string>
+    <string name="register_car_message">Ready to earn some money and make friends? Great! Register your car now.</string>
+    <string name="toyota">Toyota</string>
+    <string name="make">Make</string>
+    <string name="corolla">Corolla</string>
+    <string name="model">Model</string>
+    <string name="grande">Grande</string>
+    <string name="year">Year</string>
+    <string name="_2018">2018</string>
+    <string name="capacity">Capacity</string>
 </resources>
