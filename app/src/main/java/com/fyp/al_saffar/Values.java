@@ -7,6 +7,7 @@ public class Values {
     public static String API_ACCOUNTS = "accounts/";
     public static String API_ACCOUNTS_LOGIN = "login/";
     public static String API_CARS = "cars/";
+    public static String API_CARS_DELETE = "delete/";
     public static String API_TEST = "test/";
 
     // Shared Preferences Stuff
