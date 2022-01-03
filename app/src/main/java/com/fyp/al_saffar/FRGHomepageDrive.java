@@ -10,12 +10,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class FRGHomepageDrive extends Fragment {
     public FloatingActionButton createDriveFab;
+    public Button registerCarButton;
 
     /**
      * // TODO: Rename parameter arguments, choose names that match
@@ -65,12 +67,18 @@ public class FRGHomepageDrive extends Fragment {
             Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         createDriveFab = view.findViewById(R.id.create_ride_fab);
+        registerCarButton = view.findViewById(R.id.register_car_button);
         createDriveFab.setOnClickListener(this::goToCreateRide);
-
+        registerCarButton.setOnClickListener(this::goToRegisterCar);
     }
 
     public void goToCreateRide(View v) {
         Intent intent = new Intent(getActivity(), CreateRide.class);
+        startActivity(intent);
+    }
+
+    public void goToRegisterCar(View v) {
+        Intent intent = new Intent(getActivity(), RegisterCar.class);
         startActivity(intent);
     }
 }
