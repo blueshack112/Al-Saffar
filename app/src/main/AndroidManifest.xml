@@ -20,6 +20,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlSaffar">
+
+
+        <activity
+            android:name=".UserProfile"
+            android:parentActivityName=".Homepage" />
         <activity
             android:name=".YourCarDetails"
             android:parentActivityName=".Homepage" />

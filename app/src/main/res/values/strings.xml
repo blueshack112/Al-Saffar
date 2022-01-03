@@ -47,4 +47,19 @@
     <string name="_4">4</string>
     <string name="yes">Yes</string>
     <string name="delete_my_car">Delete My Car</string>
+    <string name="you_profile_details">You Profile Details</string>
+    <string name="view_profile_message">We are very glad to see you on Al-Saffar. Feel free to view your profile as saved in our system.</string>
+    <string name="full_name">Full Name</string>
+    <string name="khawer_ali">Khawer Ali</string>
+    <string name="joined_since">Joined Since</string>
+    <string name="miles_ridden">Miles Ridden</string>
+    <string name="miles_driven">Miles Driven</string>
+    <string name="_500_killometers">500 Killometers</string>
+    <string name="_240_kilometers">240 Kilometers</string>
+    <string name="october_2021">October 2021</string>
+    <string name="change_password">Change password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="change_my_password">Change My Password</string>
 </resources>

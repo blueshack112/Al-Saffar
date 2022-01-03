@@ -6,6 +6,7 @@ public class Values {
     public static String API_ORIGIN_WITHOUT_HTTP = "192.168.1.3/";
     public static String API_ACCOUNTS = "accounts/";
     public static String API_ACCOUNTS_LOGIN = "login/";
+    public static String API_ACCOUNTS_CHANGE_PASS = "changepass/";
     public static String API_CARS = "cars/";
     public static String API_CARS_DELETE = "delete/";
     public static String API_TEST = "test/";
