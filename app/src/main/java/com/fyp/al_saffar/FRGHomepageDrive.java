@@ -15,9 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -29,11 +27,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.fyp.al_saffar.Values.API_CARS;
-import static com.fyp.al_saffar.Values.API_ORIGIN;
 import static com.fyp.al_saffar.Values.TAG;
 
 
@@ -67,7 +60,7 @@ public class FRGHomepageDrive extends Fragment {
     }
 
     public void goToCreateRide(View v) {
-        Intent intent = new Intent(getActivity(), CreateRide.class);
+        Intent intent = new Intent(getActivity(), SelectStopsForRide.class);
         startActivity(intent);
     }
 

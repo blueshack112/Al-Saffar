@@ -37,7 +37,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".CreateRide"
+            android:name=".SelectStopsForRide"
             android:label="@string/title_activity_create_ride" />
         <activity
             android:name=".Homepage"

@@ -13,24 +13,22 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.fyp.al_saffar.databinding.ActivityCreateRideBinding;
+import com.fyp.al_saffar.databinding.ActivitySelectStopsForRideBinding;
 
 import java.io.IOException;
 import java.util.List;
 
-import javax.xml.parsers.FactoryConfigurationError;
-
-public class CreateRide extends FragmentActivity implements OnMapReadyCallback {
+public class SelectStopsForRide extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityCreateRideBinding binding;
+    private ActivitySelectStopsForRideBinding binding;
     private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityCreateRideBinding.inflate(getLayoutInflater());
+        binding = ActivitySelectStopsForRideBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // initializing our search view.
@@ -57,7 +55,7 @@ public class CreateRide extends FragmentActivity implements OnMapReadyCallback {
                 // checking if the entered location is null or not.
                 if (location != null || location.equals("")) {
                     // on below line we are creating and initializing a geo coder.
-                    Geocoder geocoder = new Geocoder(CreateRide.this);
+                    Geocoder geocoder = new Geocoder(SelectStopsForRide.this);
                     try {
                         // on below line we are getting location from the
                         // location name and adding that location to address list.

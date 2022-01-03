@@ -6,14 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".FRGHomepageRide">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--search view to search our location-->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/create_ride_search_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ride"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="10dp"
+        android:background="#4DDADADA"
+        android:elevation="5dp"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Where do you wanna go?" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="250dp"
+        android:text="Demo Pages To Complete"
+        android:textSize="@dimen/h2_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_ride_search_bar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
